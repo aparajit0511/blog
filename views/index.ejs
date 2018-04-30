@@ -1,0 +1,45 @@
+<% include partials/header %>
+
+<div class="ui main text container">
+    <div class="ui huge header">Tech Blog App</div>
+    <div class="ui top  attached segment">
+        <div class="ui divided items">
+
+<% for(var i=0;i<tech.length;i++){ %>
+
+<div class="item">
+                    <div class="image">
+<img src= "<%= tech[i].image %>">
+ </div>
+                    <div class="content">
+                        <a class="header" href="/tech/<%= tech._id %>"><%= tech[i].title %></a>
+                        <div class="meta">
+                            <span><p><%= tech[i].date.toDateString() %></p></span>
+                             </div>
+                         <div class="description">
+<p><%= tech[i].body.substring(0,100) %>....</p>
+
+</div>
+                         <div class="extra">
+
+
+<a class="ui floated basic violet button"  href="/tech/<%= tech[i]._id %>">Read More
+
+ <i class="right chevron icon"></i>
+</a>
+ </div>
+                    </div>
+                </div>
+
+<% } %>
+
+</div>
+ <a class="ui orange basic button" href="/tech/new"> New Post</a>
+    </div>
+    
+   
+</div>
+
+
+
+<% include partials/footer %>
